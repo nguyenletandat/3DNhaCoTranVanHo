@@ -161,12 +161,17 @@ a {
 }
 
 .hero__eyebrow {
+  display: inline-block;
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 0.8rem;
   font-weight: 600;
-  color: var(--bronze-light);
-  margin-bottom: 1em;
+  color: var(--cream);
+  background: rgba(43, 29, 18, 0.45);
+  border: 1px solid rgba(251, 246, 236, 0.3);
+  padding: 6px 16px;
+  border-radius: 999px;
+  margin-bottom: 1.2em;
 }
 
 .hero__title {
