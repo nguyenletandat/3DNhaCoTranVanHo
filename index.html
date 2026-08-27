@@ -207,17 +207,15 @@
       <button class="gallery-item" data-full="assets/gallery-14.jpg"><img src="assets/gallery-14.jpg" alt="Không gian sinh hoạt gia đình" loading="lazy" /></button>
     </div>
 
-    <!-- Slider so sánh ảnh xưa/nay — TODO: bộ ảnh đã thu thập (compare-old_goc-a_01,
-         compare-new_goc-a_01/02/03 trong THU THAP THONG TIN/ẢNH) KHÔNG khớp góc chụp
-         (ảnh xưa chụp từ cổng ngoài đường, ảnh nay chụp từ trong sân) nên chưa dùng được
-         cho slider này — cần chụp lại đúng CÙNG một góc với ảnh xưa, rồi thay
-         assets/compare-old.svg / assets/compare-new.svg bằng 2 ảnh đó. -->
+    <!-- Ảnh xưa: chụp từ cổng ngoài đường; ảnh nay: chụp từ trong sân — không cùng góc,
+         nhưng để ảnh thật thay vì placeholder. TODO: chụp lại ảnh "nay" đúng góc với ảnh "xưa"
+         nếu muốn hiệu ứng so sánh chuẩn hơn. -->
     <div class="compare" data-aos="fade-up">
       <h3 class="compare__title">So sánh: Xưa &amp; Nay</h3>
       <div class="compare__frame" id="compare-frame">
-        <img class="compare__img compare__img--before" src="assets/compare-old.svg" alt="Ảnh xưa (placeholder)" />
+        <img class="compare__img compare__img--before" src="assets/compare-old.jpg" alt="Ảnh nhà cổ Trần Văn Hổ chụp từ cổng ngoài đường" />
         <div class="compare__after" id="compare-after">
-          <img class="compare__img compare__img--after" src="assets/compare-new.svg" alt="Ảnh hiện trạng (placeholder)" />
+          <img class="compare__img compare__img--after" src="assets/compare-new.jpg" alt="Ảnh hiện trạng chụp từ trong sân" />
         </div>
         <input type="range" min="0" max="100" value="50" class="compare__range" id="compare-range" aria-label="Kéo để so sánh ảnh xưa và nay" />
         <div class="compare__handle" id="compare-handle" aria-hidden="true">

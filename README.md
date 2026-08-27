@@ -63,12 +63,13 @@ Rồi mở `http://localhost:8080`.
 
 Các mục còn lại đều có comment `TODO` ngay tại chỗ trong `index.html`:
 
-- **Slider so sánh Xưa/Nay** (`assets/compare-old.svg` / `compare-new.svg`):
-  vẫn là placeholder. Bộ ảnh đã thu thập (`compare-old_goc-a_01`,
-  `compare-new_goc-a_01/02/03`) **không khớp góc chụp** (ảnh xưa chụp từ cổng
-  ngoài đường, ảnh nay chụp từ trong sân) nên chưa dùng được — cần chụp lại
-  ảnh "nay" đúng **cùng một góc** với ảnh "xưa" rồi thay 2 file SVG đó bằng
-  ảnh JPG thật.
+- **Slider so sánh Xưa/Nay** (`assets/compare-old.jpg` / `compare-new.jpg`):
+  đã dùng ảnh thật (`compare-old_goc-a_01`, `compare-new_goc-a_01`), nhưng
+  **hai ảnh không cùng góc chụp** (ảnh xưa chụp từ cổng ngoài đường, ảnh nay
+  chụp từ trong sân) nên hiệu ứng "kéo để so sánh" chưa thật sự chuẩn — vẫn
+  hiển thị được vì cả hai đều là ảnh thật của công trình. Nếu muốn hiệu ứng
+  so sánh chuẩn (cùng một khung hình theo thời gian), cần chụp lại ảnh "nay"
+  đúng cùng góc với ảnh "xưa" rồi thay 2 file JPG đó.
 - **Văn bản lịch sử**: 3 đoạn trong mục "Câu chuyện lịch sử" và 3/5 mốc trong
   `TIMELINE_DATA` (đầu `script.js`, đánh dấu `19xx`/`20xx`) vẫn là placeholder
   — cần điền tư liệu lịch sử thật đã xác minh.
