@@ -40,10 +40,15 @@ Rồi mở `http://localhost:8080`.
 
 ## Đã cập nhật (2026-08-27)
 
-- **Ảnh thật**: hero, 3 ảnh câu chuyện, và 8 ảnh thư viện đã được thay bằng ảnh
+- **Ảnh thật**: hero, 3 ảnh câu chuyện, và 14 ảnh thư viện (8 vị trí gốc +
+  6 ảnh nội thất bổ sung: bàn thờ, hoành phi, không gian thờ cúng, phản gỗ
+  gian tiếp khách, buồng ngủ, không gian sinh hoạt) đã được thay bằng ảnh
   thật lấy từ bộ ảnh sinh viên thu thập (`THU THAP THONG TIN/ẢNH` trong
   monorepo gốc), đã resize + nén (JPG, cạnh dài tối đa 2000px). `gallery-8.jpg`
-  là bản vẽ phục dựng mặt bằng khuôn viên (render lại từ PDF).
+  là bản vẽ phục dựng mặt bằng khuôn viên (render lại từ PDF). Bộ ảnh gốc có
+  65 tấm theo `Checklist-anh-can-thu-thap.xlsx`, nhưng đó là số lượng ảnh
+  *cần chụp* (nhiều tấm/vị trí để chọn ảnh đẹp nhất + ảnh tham chiếu canh mô
+  hình 3D) — không phải số ảnh hiển thị trên web.
 - **Mô hình 3D**: `3DNhaCo.glb` đã được dựng lại từ file quét
   `NHA ONG TRAN VAN HO.obj` (SketchUp, ~11,6 triệu đỉnh, ~1,26 GB). File gốc
   không kèm `.mtl`/texture nên mô hình mới **không có ảnh texture thật** — các
