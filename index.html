@@ -21,8 +21,7 @@
 
 <!-- ============ 1. HERO ============ -->
 <header class="hero" id="hero">
-  <!-- TODO: thay hero.jpg bằng ảnh thật của toà nhà (khuyến nghị 1920x1280 trở lên) -->
-  <div class="hero__bg" style="background-image:url('assets/hero-bg.svg')"></div>
+  <div class="hero__bg" style="background-image:url('assets/hero-bg.jpg')"></div>
   <div class="hero__overlay"></div>
   <div class="hero__content">
     <p class="hero__eyebrow">Di tích kiến trúc nghệ thuật cấp Quốc gia</p>
@@ -79,12 +78,14 @@
 
       <!--
         HOTSPOT MẪU — dữ liệu placeholder, có thể thêm/bớt/sửa thoải mái.
-        data-position / data-normal: TODO — chỉnh lại toạ độ (x y z, đơn vị mét trong
-        không gian model) cho khớp với mô hình 3DNhaCo.glb thật; các giá trị dưới đây
-        chỉ là ước lượng ban đầu để có chỗ bấm thử.
-        Nội dung chú thích trong mỗi <div class="hotspot-annotation"> cũng là placeholder.
+        data-position / data-normal: toạ độ (x y z, đơn vị mét) đã ước lượng lại cho
+        khớp với mô hình 3DNhaCo.glb hiện tại (cổng + nhà + sân vườn, gốc toạ độ giữ
+        nguyên như khi xuất từ NHA ONG TRAN VAN HO.obj). Vẫn chỉ là ước lượng theo mắt
+        thường — TODO: mở site, bấm thử từng hotspot, tinh chỉnh lại vài chục cm nếu
+        chưa nằm đúng ngay trên cổng/mái/sân.
+        Nội dung chú thích trong mỗi <div class="hotspot-annotation"> vẫn là placeholder.
       -->
-      <button class="hotspot" slot="hotspot-1" data-position="0m 1.6m 2.2m" data-normal="0m 0.3m 1m" data-visibility-attribute="visible" aria-label="Điểm đánh dấu: Cổng chính">
+      <button class="hotspot" slot="hotspot-1" data-position="6m 2.4m 1m" data-normal="0m 0.3m 1m" data-visibility-attribute="visible" aria-label="Điểm đánh dấu: Cổng chính">
         <span class="hotspot__dot"></span>
         <div class="hotspot-annotation">
           <strong>Cổng chính</strong>
@@ -92,7 +93,7 @@
         </div>
       </button>
 
-      <button class="hotspot" slot="hotspot-2" data-position="0m 3.6m 0m" data-normal="0m 1m 0m" data-visibility-attribute="visible" aria-label="Điểm đánh dấu: Mái ngói">
+      <button class="hotspot" slot="hotspot-2" data-position="22m 5.3m -20m" data-normal="0m 1m 0m" data-visibility-attribute="visible" aria-label="Điểm đánh dấu: Mái ngói">
         <span class="hotspot__dot"></span>
         <div class="hotspot-annotation">
           <strong>Mái ngói</strong>
@@ -100,7 +101,7 @@
         </div>
       </button>
 
-      <button class="hotspot" slot="hotspot-3" data-position="1.5m 1m -1.5m" data-normal="0.5m 0.2m -1m" data-visibility-attribute="visible" aria-label="Điểm đánh dấu: Sân trong">
+      <button class="hotspot" slot="hotspot-3" data-position="16m 0.3m -6m" data-normal="0m 1m 0m" data-visibility-attribute="visible" aria-label="Điểm đánh dấu: Sân trong">
         <span class="hotspot__dot"></span>
         <div class="hotspot-annotation">
           <strong>Sân trong</strong>
@@ -126,7 +127,7 @@
 
   <div class="story-block container" data-aos="fade-right">
     <div class="story-block__media">
-      <img src="assets/story-1.svg" alt="Minh hoạ giai đoạn khởi dựng" loading="lazy" />
+      <img src="assets/story-1.jpg" alt="Chi tiết chạm khắc gỗ cổ và kết cấu mái trong nhà" loading="lazy" />
     </div>
     <div class="story-block__text">
       <span class="story-block__tag">Giai đoạn 1</span>
@@ -142,7 +143,7 @@
 
   <div class="story-block story-block--reverse container" data-aos="fade-left">
     <div class="story-block__media">
-      <img src="assets/story-2.svg" alt="Minh hoạ giai đoạn biến động lịch sử" loading="lazy" />
+      <img src="assets/story-2.jpg" alt="Dấu vết thời gian trên tường và lối đi cũ của công trình" loading="lazy" />
     </div>
     <div class="story-block__text">
       <span class="story-block__tag">Giai đoạn 2</span>
@@ -158,7 +159,7 @@
 
   <div class="story-block container" data-aos="fade-right">
     <div class="story-block__media">
-      <img src="assets/story-3.svg" alt="Minh hoạ giai đoạn trùng tu và bảo tồn" loading="lazy" />
+      <img src="assets/story-3.jpg" alt="Bảng công nhận Di tích kiến trúc nghệ thuật cấp Quốc gia" loading="lazy" />
     </div>
     <div class="story-block__text">
       <span class="story-block__tag">Giai đoạn 3</span>
@@ -189,19 +190,22 @@
     <p class="section__eyebrow" data-aos="fade-up">Hình ảnh</p>
     <h2 class="section__title" data-aos="fade-up">Thư viện ảnh</h2>
 
-    <!-- TODO: 8 ảnh dưới đây đều là placeholder — thay src và alt bằng ảnh thật -->
     <div class="gallery-grid" id="gallery-grid" data-aos="fade-up">
-      <button class="gallery-item" data-full="assets/gallery-1.svg"><img src="assets/gallery-1.svg" alt="Cổng chính (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-2.svg"><img src="assets/gallery-2.svg" alt="Mái ngói (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-3.svg"><img src="assets/gallery-3.svg" alt="Sân trong (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-4.svg"><img src="assets/gallery-4.svg" alt="Nội thất - Gian thờ (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-5.svg"><img src="assets/gallery-5.svg" alt="Chi tiết chạm khắc (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-6.svg"><img src="assets/gallery-6.svg" alt="Cột và kèo gỗ (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-7.svg"><img src="assets/gallery-7.svg" alt="Toàn cảnh công trình (ảnh placeholder)" loading="lazy" /></button>
-      <button class="gallery-item" data-full="assets/gallery-8.svg"><img src="assets/gallery-8.svg" alt="Phục dựng bản vẽ (ảnh placeholder)" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-1.jpg"><img src="assets/gallery-1.jpg" alt="Cổng chính, số nhà 18 đường Bạch Đằng" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-2.jpg"><img src="assets/gallery-2.jpg" alt="Mái ngói và hoa văn đầu đao" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-3.jpg"><img src="assets/gallery-3.jpg" alt="Sân trong và mặt hông ngôi nhà" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-4.jpg"><img src="assets/gallery-4.jpg" alt="Cửa vào gian thờ chạm khắc gỗ" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-5.jpg"><img src="assets/gallery-5.jpg" alt="Chi tiết chạm khắc và hoành phi" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-6.jpg"><img src="assets/gallery-6.jpg" alt="Cột và kèo gỗ chạm khắc" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-7.jpg"><img src="assets/gallery-7.jpg" alt="Toàn cảnh mặt tiền công trình" loading="lazy" /></button>
+      <button class="gallery-item" data-full="assets/gallery-8.jpg"><img src="assets/gallery-8.jpg" alt="Bản vẽ phục dựng mặt bằng khuôn viên" loading="lazy" /></button>
     </div>
 
-    <!-- Slider so sánh ảnh xưa/nay — TODO: thay 2 ảnh compare-old.svg / compare-new.svg bằng ảnh thật -->
+    <!-- Slider so sánh ảnh xưa/nay — TODO: bộ ảnh đã thu thập (compare-old_goc-a_01,
+         compare-new_goc-a_01/02/03 trong THU THAP THONG TIN/ẢNH) KHÔNG khớp góc chụp
+         (ảnh xưa chụp từ cổng ngoài đường, ảnh nay chụp từ trong sân) nên chưa dùng được
+         cho slider này — cần chụp lại đúng CÙNG một góc với ảnh xưa, rồi thay
+         assets/compare-old.svg / assets/compare-new.svg bằng 2 ảnh đó. -->
     <div class="compare" data-aos="fade-up">
       <h3 class="compare__title">So sánh: Xưa &amp; Nay</h3>
       <div class="compare__frame" id="compare-frame">

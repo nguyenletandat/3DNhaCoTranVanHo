@@ -38,33 +38,43 @@ npx serve .
 
 Rồi mở `http://localhost:8080`.
 
-## Việc cần làm trước khi công bố chính thức
+## Đã cập nhật (2026-08-27)
 
-Toàn bộ nội dung placeholder đều có comment `TODO` ngay tại chỗ trong
-`index.html` / `script.js`. Tổng hợp lại:
+- **Ảnh thật**: hero, 3 ảnh câu chuyện, và 8 ảnh thư viện đã được thay bằng ảnh
+  thật lấy từ bộ ảnh sinh viên thu thập (`THU THAP THONG TIN/ẢNH` trong
+  monorepo gốc), đã resize + nén (JPG, cạnh dài tối đa 2000px). `gallery-8.jpg`
+  là bản vẽ phục dựng mặt bằng khuôn viên (render lại từ PDF).
+- **Mô hình 3D**: `3DNhaCo.glb` đã được dựng lại từ file quét
+  `NHA ONG TRAN VAN HO.obj` (SketchUp, ~11,6 triệu đỉnh, ~1,26 GB). File gốc
+  không kèm `.mtl`/texture nên mô hình mới **không có ảnh texture thật** — các
+  mặt được tô màu theo hướng pháp tuyến (mái = màu ngói đất nung, tường = màu
+  gỗ, sân = màu be, cây xanh = màu lá) để dễ đọc hình khối hơn màu xám trơn.
+  File gốc chứa cả một dãy nhiều căn nhà lân cận; đã xác định và cắt riêng
+  đúng khuôn viên nhà ông Trần Văn Hổ (cổng + nhà + sân vườn), rồi giảm từ
+  ~10,5 triệu xuống còn ~800 nghìn mặt để tải được trên web/mobile.
+  Toạ độ 3 hotspot mẫu cũng đã ước lượng lại cho khớp mô hình mới.
 
-- **Ảnh**: `assets/hero-bg.svg`, `assets/story-1..3.svg`, `assets/gallery-1..8.svg`,
-  `assets/compare-old.svg`, `assets/compare-new.svg` đều là ảnh minh hoạ tạm
-  (SVG tông màu ấm) — thay bằng ảnh thật rồi trỏ lại `src` tương ứng trong
-  `index.html`. Nên nén ảnh trước khi thêm vào (JPG/WebP, không quá vài trăm KB/ảnh)
-  vì trang chưa có build step để tối ưu ảnh tự động. Danh sách chi tiết vị trí
-  cần chụp, số lượng, và tên file bắt buộc cho từng tấm nằm trong
-  `Checklist-anh-can-thu-thap.xlsx`.
-- **Văn bản lịch sử**: 3 block trong mục "Câu chuyện lịch sử" (Khởi dựng /
-  Biến động lịch sử / Trùng tu & bảo tồn) và mảng `TIMELINE_DATA` ở đầu
-  `script.js` — hiện chỉ có 2 mốc đã xác nhận (1890 khởi dựng, 1993 xếp hạng
-  di tích Quốc gia), các mốc còn lại (`19xx`, `20xx`) là placeholder cần điền
-  năm + sự kiện thật.
-- **Hotspot trên mô hình 3D**: 3 hotspot mẫu ("Cổng chính", "Mái ngói", "Sân
-  trong") trong `index.html` (tìm `slot="hotspot-1|2|3"`). `data-position` /
-  `data-normal` là toạ độ ước lượng — cần chỉnh lại cho khớp với mô hình
-  `3DNhaCo.glb` thật (mở model-viewer, thử các giá trị x/y/z tới khi điểm nằm
-  đúng vị trí mong muốn), và thay nội dung chú thích trong mỗi
-  `<div class="hotspot-annotation">`.
-- **Vị trí**: khối `<iframe>` Google Maps trong `index.html` đang nhúng theo
-  địa chỉ text (chưa phải toạ độ khảo sát chính xác). Thay bằng toạ độ chính
-  xác khi có (ví dụ lấy từ Google Maps: nhấp chuột phải đúng vị trí công
-  trình → sao chép toạ độ), và điền giờ mở cửa thật (đang là placeholder).
+## Việc còn cần làm
+
+Các mục còn lại đều có comment `TODO` ngay tại chỗ trong `index.html`:
+
+- **Slider so sánh Xưa/Nay** (`assets/compare-old.svg` / `compare-new.svg`):
+  vẫn là placeholder. Bộ ảnh đã thu thập (`compare-old_goc-a_01`,
+  `compare-new_goc-a_01/02/03`) **không khớp góc chụp** (ảnh xưa chụp từ cổng
+  ngoài đường, ảnh nay chụp từ trong sân) nên chưa dùng được — cần chụp lại
+  ảnh "nay" đúng **cùng một góc** với ảnh "xưa" rồi thay 2 file SVG đó bằng
+  ảnh JPG thật.
+- **Văn bản lịch sử**: 3 đoạn trong mục "Câu chuyện lịch sử" và 3/5 mốc trong
+  `TIMELINE_DATA` (đầu `script.js`, đánh dấu `19xx`/`20xx`) vẫn là placeholder
+  — cần điền tư liệu lịch sử thật đã xác minh.
+- **Nội dung chú thích hotspot**: toạ độ đã đúng vị trí (cổng/mái/sân), nhưng
+  nội dung text trong mỗi `<div class="hotspot-annotation">` vẫn là
+  placeholder — cần viết mô tả lịch sử/kiến trúc thật cho từng điểm. Toạ độ
+  cũng chỉ ước lượng bằng mắt, có thể cần tinh chỉnh thêm vài chục cm khi mở
+  thử trên site.
+- **Vị trí**: khối `<iframe>` Google Maps đang nhúng theo địa chỉ text (chưa
+  phải toạ độ khảo sát chính xác). Thay bằng toạ độ chính xác khi có, và điền
+  giờ mở cửa thật (đang là placeholder).
 - **Footer**: tên đơn vị quản lý di tích và thông tin liên hệ đang là
   placeholder trong `index.html` (mục `.footer__org`).
 - **Meta chia sẻ**: `og:image` chưa có ảnh — thêm khi có ảnh đại diện chính thức.
@@ -75,6 +85,6 @@ Toàn bộ nội dung placeholder đều có comment `TODO` ngay tại chỗ tro
   hoạt động đúng ngay khi deploy lên domain thật, không cần cấu hình thêm.
 - Slider so sánh ảnh xưa/nay và lightbox thư viện ảnh là code tự viết (không
   phụ thuộc thư viện ngoài) trong `script.js`.
-- `3DNhaCo.glb` (~24 MB) được commit thẳng vào Git — vẫn trong giới hạn bình
+- `3DNhaCo.glb` (~20 MB) được commit thẳng vào Git — vẫn trong giới hạn bình
   thường của GitHub (không cần Git LFS ở kích thước này), nhưng nếu sau này
   thay bằng model nặng hơn nhiều (>100 MB) thì cần cân nhắc Git LFS.
